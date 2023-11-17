@@ -9,9 +9,9 @@ def sum_with_range(min, max):
 
 print(sum_with_range(1,10))
 result =  sum_with_range(20,30)
-print(result)
+print('result = ', result)
 result_2 =  sum_with_range(result, result + 10)
-print(result_2)
+print('result_2 = ',result_2)
 
 
 
