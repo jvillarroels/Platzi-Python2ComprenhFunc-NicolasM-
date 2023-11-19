@@ -1,7 +1,7 @@
 print('Hello')
 
 def my_print(text):
-    print(text * 2)
+    print('text * 2 => ', text * 2)
 
 my_print('This is my text ')
 my_print('Hola ')
