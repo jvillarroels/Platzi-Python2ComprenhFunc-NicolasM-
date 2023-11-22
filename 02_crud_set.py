@@ -8,10 +8,10 @@ print('pe' in set_countries)
 
 # add
 set_countries.add('pe')
-print(set_countries)
+print('set_countries => ', set_countries)
 # se intenta agregar nuevamente pero los conjuntos no permiten duplicidad
 set_countries.add('pe')
-print(set_countries)
+print('set_countries. Impide duplicidad => ',set_countries)
 
 # update
 set_countries.update({'ar','ecua','pe'})
