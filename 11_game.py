@@ -1,38 +1,30 @@
-import random
-
 print("")
 print("Programa 0_main.py")
 print("Juego de Piedra, Papel o Tijera")
 print("=====================")
 print("")
 
-options = ('piedra', 'papel', 'tijera')
-computer_wins = 0
-user_wins = 0
-rounds = 1
+import random
 
-while True:
 
-    print('\n'+('*' * 10))
-    print('ROUND', rounds)
-    print('*' * 10)
-
-    print('    computer_wins', computer_wins)
-    print('    user_wins', user_wins)
-    print(' ')
-
+def choose_options():
+    options = ('piedra', 'papel', 'tijera') 
     user_option = input('Piedra, papel o tijera => ')
     user_option = user_option.lower()
+    
+    if not user_option in options:
+        print('*** ---> Esa opción no es válida')
+        # continue
+        return None, None
 
     computer_option = random.choice(options)
 
     print('Puntos del usuario => ', user_option)
     print('Puntos de la computadora => ', computer_option)
+    return user_option, computer_option
 
-    if not user_option in options:
-        print('*** ---> Esa opción no es válida')
-        continue
-
+def check_rules(user_option, computer_option, user_wins, computer_wins, rounds) :
+    
     if user_option == computer_option:
         print('Empate!')
     elif user_option == 'piedra':
@@ -62,16 +54,37 @@ while True:
             print('\npiedra gana a tijera')
             print('    computer ganó EL ROUND ' + str(rounds))
             computer_wins += 1
+    return user_wins, computer_wins
+
+def run_game():
+    computer_wins = 0
+    user_wins = 0
+    rounds = 1
+    while True:
+
+        print('\n'+('*' * 10))
+        print('ROUND', rounds)
+        print('*' * 10)
+
+        print('    computer_wins', computer_wins)
+        print('    user_wins', user_wins)
+        print(' ')
+        rounds += 1    
+
+        user_option, computer_option =  choose_options()
+        user_wins, computer_wins = check_rules(user_option, computer_option, user_wins, computer_wins, rounds)
+
+
+        if computer_wins == 2:
+            print('\nEl ganador del JUEGO es LA COMPUTADORA')
+            break
+
+        if user_wins == 2:
+            print('\nEl ganador del JUEGO es EL USUARIO')
+            break
+
+run_game()
     
-    if computer_wins == 2:
-        print('\nEl ganador del JUEGO es LA COMPUTADORA')
-        break
-
-    if user_wins == 2:
-        print('\nEl ganador del JUEGO es EL USUARIO')
-        break
-
-    rounds += 1    
     
 
 
