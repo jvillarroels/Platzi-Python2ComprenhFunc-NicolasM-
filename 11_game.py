@@ -23,8 +23,21 @@ def choose_options():
     print('Puntos de la computadora => ', computer_option)
     return user_option, computer_option
 
+
 def check_rules(user_option, computer_option, user_wins, computer_wins, rounds) :
-    
+    """Check Rules
+
+    Args:
+        user_option (_type_): _description_
+        computer_option (_type_): _description_
+        user_wins (_type_): _description_
+        computer_wins (_type_): _description_
+        rounds (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+
     if user_option == computer_option:
         print('Empate!')
     elif user_option == 'piedra':
@@ -57,6 +70,9 @@ def check_rules(user_option, computer_option, user_wins, computer_wins, rounds) 
     return user_wins, computer_wins
 
 def run_game():
+    """ RUN GAME
+    Rutina principal del juego
+    """
     computer_wins = 0
     user_wins = 0
     rounds = 1
