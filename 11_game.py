@@ -74,9 +74,11 @@ def run_game():
     Rutina principal del juego
     """
     computer_wins = 0
-    user_wins = 0
-    rounds = 1
     
+    user_wins = 0
+    
+    rounds = 1
+
     while True:
 
         print('\n'+('*' * 10))
